@@ -986,14 +986,14 @@ else
 	verif_ptrs $porta
 	echo ""
 	echo -e "\033[1;37m[\033[1;31m1\033[1;37m] \033[1;33mSistema"
-	echo -e "\033[1;37m[\033[1;31m2\033[1;37m] \033[1;33mGoogle (\033[1;32mRecomendado\033[1;33m)"
+	echo -e "\033[1;37m[\033[1;31m2\033[1;37m] \033[1;33mGoogle"
 	echo -e "\033[1;37m[\033[1;31m3\033[1;37m] \033[1;33mOpenDNS"
-	echo -e "\033[1;37m[\033[1;31m4\033[1;37m] \033[1;33mCloudflare"
+	echo -e "\033[1;37m[\033[1;31m4\033[1;37m] \033[1;33mCloudflare (\033[1;32mRecomendado\033[1;33m)"
 	echo -e "\033[1;37m[\033[1;31m5\033[1;37m] \033[1;33mHurricane Electric"
 	echo -e "\033[1;37m[\033[1;31m6\033[1;37m] \033[1;33mVerisign"
 	echo -e "\033[1;37m[\033[1;31m7\033[1;37m] \033[1;33mDNS Performace\033[0m"
 	echo ""
-	read -p "$(echo -e "\033[1;32mQUAL DNS DESEJA UTILIZAR? \033[1;37m")" -e -i 2 DNS
+	read -p "$(echo -e "\033[1;32mQUAL DNS DESEJA UTILIZAR? \033[1;37m")" -e -i 4 DNS
 	echo ""
 	echo -e "\033[1;37m[\033[1;31m1\033[1;37m] \033[1;33mUDP"
 	echo -e "\033[1;37m[\033[1;31m2\033[1;37m] \033[1;33mTCP (\033[1;32mRecomendado\033[1;33m)"
@@ -1201,25 +1201,14 @@ exit 0' > $RCLOCAL
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 dev tun
-proto $PROTOCOL
-sndbuf 0
-rcvbuf 0
-setenv opt method GET
-remote /SSHPLUS? $porta
-http-proxy-option CUSTOM-HEADER Host portalrecarga.vivo.com.br/recarga
+remote $IP $porta $PROTOCOL
+http-proxy-option CUSTOM-HEADER Host $IP
 http-proxy $IP 80
-resolv-retry 5
-nobind
-persist-key
-persist-tun
 remote-cert-tls server
 cipher AES-256-CBC
 comp-lzo yes
-setenv opt block-outside-dns
 key-direction 1
-verb 3
 auth-user-pass
-keepalive 10 120
 float" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "SSHPLUS"
@@ -1495,7 +1484,7 @@ fun_sslh () {
         echo -e "\n\033[1;32mINSTALANDO O SSLH !\033[0m\n"
         fun_bar 'fun_instsslh'
         echo -e "\n\033[1;32mINICIANDO O SSLH !\033[0m\n"
-        fun_bar '/etc/init.d/sslh restart && service sslh restart'
+        fun_bar '/etc/init.d/sslh restart && service sslh restart && sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf && service apache2 restart'
         [[ $(netstat -nplt |grep -w 'sslh' | wc -l) != '0' ]] && echo -e "\n\033[1;32mINSTALADO COM SUCESSO !\033[0m" || echo -e "\n\033[1;31mERRO INESPERADO !\033[0m"
         sleep 3
         fun_conexao
