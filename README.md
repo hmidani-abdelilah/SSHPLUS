@@ -1,7 +1,7 @@
 # SSHPLUS
 
 VERSAO: 19
-CorreÃ§Ãµes Dropbear
+Correções Dropbear
 Melhorias no BOT
-CorreÃ§Ã£o na funcao teste
+Correção na funcao teste
 SSL DE VOLTA NA CLARO
