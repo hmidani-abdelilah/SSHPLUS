@@ -592,8 +592,7 @@ sobremim() {
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>🤖 BOT SSHPLUS MANAGER 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Desenvolvido por:</b> @crazy_vpn\n"
-        msg+="<b>Canal Oficial:</b> @SSHPLUS\n\n"
+        msg+="<b>Desenvolvido por:</b> @twossh\n"
         msg+="Fui criado com o propósito de fornecer informações e ferramentas para gestao de vps 🐧 GNU/Linux 🐧 com foco em uso VPN\n\n"
         msg+="<b>Menu:</b> /menu\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
