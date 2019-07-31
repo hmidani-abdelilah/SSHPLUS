@@ -510,7 +510,7 @@ else
     echo -e "\n\033[1;32mCRIANDO CERTIFICADO !\033[0m"
     echo ""
     ssl_certif () {
-    crt=' '
+    crt='br'
     openssl genrsa -out key.pem 2048 > /dev/null 2>&1
     (echo $crt; echo $crt; echo $crt; echo $crt; echo $crt; echo $crt; echo $crt)|openssl req -new -x509 -key key.pem -out cert.pem -days 1000 > /dev/null 2>&1
     cat cert.pem key.pem >> /etc/stunnel/stunnel.pem
