@@ -489,7 +489,7 @@ else
 	if [[ "$resposta" = 's' ]]; then
 	echo -e "\n\033[1;33mDEFINA UMA PORTA PARA O SSL TUNNEL !\033[0m"
 	echo ""
-	read -p "$(echo -e "\033[1;32mQUAL PORTA DESEJA UTILIZAR? \033[1;37m")" -e -i 3128 porta
+	read -p "$(echo -e "\033[1;32mQUAL PORTA DESEJA UTILIZAR? \033[1;37m")" -e -i 443 porta
 	if [[ -z "$porta" ]]; then
 		echo ""
 		echo -e "\033[1;31mPorta invalida!"
