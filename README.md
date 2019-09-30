@@ -1,4 +1,4 @@
-# SSHPLUS
+# SSHPLUS By @Crazy_vpn
 
 VERSAO: 19
 Correções Dropbear
