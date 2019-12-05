@@ -1,7 +1,6 @@
 # SSHPLUS By @Crazy_vpn
 
 VERSAO: 19
-Correções Dropbear
 Melhorias no BOT
-Correção na funcao teste
-SSL DE VOLTA NA CLARO
+
+Bot Funcionando
