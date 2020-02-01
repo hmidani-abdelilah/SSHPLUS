@@ -92,15 +92,13 @@ echo ""
         fi
         if [[ $conex -eq 0 ]]; then
            status=$(echo -e "\033[1;31mOffline \033[1;33m       ")
-           echo -ne "\033[1;33m"
-           printf '%-17s%-14s%-10s%s\n' " $user"      "$status" "$conex/$s2ssh" "$timerr" 
         else
            status=$(echo -e "\033[1;32mOnline\033[1;33m         ")
            echo -ne "\033[1;33m"
            printf '%-17s%-14s%-10s%s\n' " $user"      "$status" "$conex/$s2ssh" "$timerr"
         fi
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     done < "$database"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
 #exit
 
