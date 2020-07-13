@@ -1,7 +1,3 @@
-# SSHPLUS (FREE)
-
-Venda Proibida
-
 # Update
 
 apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
@@ -10,6 +6,6 @@ apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 wget https://raw.githubusercontent.com/twossh/SSHPLUS/master/Plus; chmod +x Plus; ./Plus
 
-# MOD
+# Dev
 
 By @Crazy_vpn
